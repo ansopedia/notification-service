@@ -3,7 +3,14 @@ import { nodemailerConfig } from '@/config';
 import Mail from 'nodemailer/lib/mailer';
 import { logger } from './Logger';
 
-export const sendEmail = async (options: Mail.Options) => {
+interface EmailOptions extends Mail.Options {
+  to: string;
+  subject: string;
+  text?: string;
+  html?: string;
+}
+
+export const sendEmail = async (options: EmailOptions) => {
   try {
     const transporter = nodemailer.createTransport(nodemailerConfig);
 

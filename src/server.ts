@@ -3,6 +3,7 @@ import { envConstants, ErrorTypeEnum } from '@/constants';
 import helmet from 'helmet';
 import cors from 'cors';
 import { errorHandler } from './middleware/errorHandler';
+import { routes } from './api/v1';
 
 export const app: Application = express();
 
@@ -33,7 +34,7 @@ if (envConstants.NODE_ENV !== 'test') {
 
 app.use(express.json());
 
-app.use('/api/v1', () => {});
+app.use('/api/v1', routes);
 
 // Handling non matching request from the client
 app.use('*', () => {
