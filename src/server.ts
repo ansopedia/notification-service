@@ -2,6 +2,7 @@ import express, { type Application } from 'express';
 import { envConstants, ErrorTypeEnum } from '@/constants';
 import helmet from 'helmet';
 import cors from 'cors';
+import { errorHandler } from './middleware/errorHandler';
 
 export const app: Application = express();
 
@@ -38,6 +39,8 @@ app.use('/api/v1', () => {});
 app.use('*', () => {
   throw new Error(ErrorTypeEnum.enum.RESOURCE_NOT_FOUND);
 });
+
+app.use(errorHandler);
 
 export const server = () => {
   app.listen(APP_PORT, () => {
