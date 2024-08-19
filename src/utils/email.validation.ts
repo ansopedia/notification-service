@@ -47,35 +47,37 @@ const passwordResetOTPPayload = z.object({
 });
 
 // Define the email notification schema
-const emailNotificationSchema = z.discriminatedUnion('eventType', [
+const emailNotification = z.discriminatedUnion('eventType', [
   z.object({
     to: emailValidator,
     eventType: z.literal('sendEmailVerificationOTP'),
+    subject: z.string().default('Email Verification OTP'),
     payload: emailVerificationOTPPayload,
   }),
   z.object({
     to: emailValidator,
     eventType: z.literal('sendEmailVerificationMagicLink'),
     payload: emailVerificationMagicLinkPayload,
+    subject: z.string().default('Email Verification OTP'),
   }),
   z.object({
     to: emailValidator,
     eventType: z.literal('sendEmailChangeConfirmation'),
     payload: emailChangeConfirmationPayload,
+    subject: z.string().default('Email Verification OTP'),
   }),
   z.object({
     to: emailValidator,
     eventType: z.literal('sendPasswordResetOTP'),
     payload: passwordResetOTPPayload,
+    subject: z.string().default('Email Verification OTP'),
   }),
   // ... Add other event types and their corresponding payloads ...
 ]);
 
-export type EmailNotificationSchema = z.infer<typeof emailNotificationSchema>;
-
-export const validateEmailNotificationSchema = (data: EmailNotificationSchema) => {
+export const validateEmailNotification = (data: EmailNotification) => {
   try {
-    return emailNotificationSchema.parse(data);
+    return emailNotification.parse(data);
   } catch (error) {
     if (error instanceof z.ZodError) {
       // Customize error messages
@@ -95,3 +97,6 @@ export const validateEmailNotificationSchema = (data: EmailNotificationSchema) =
     throw error;
   }
 };
+
+export type EmailNotification = z.infer<typeof emailNotification>;
+export type EmailVerificationOTPPayload = z.infer<typeof emailVerificationOTPPayload>;
