@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc",
     "dev": "nodemon",
-    "email": "email dev",
+    "email": "email dev --dir src/emails",
     "lint": "eslint src .",
     "lint:fix": "eslint --fix .",
     "pretest": "pnpm build",
