@@ -2,6 +2,8 @@ import express, { type Application } from 'express';
 import { envConstants, ErrorTypeEnum } from '@/constants';
 import helmet from 'helmet';
 import cors from 'cors';
+import { errorHandler } from './middleware/errorHandler';
+import { routes } from './api/v1';
 
 export const app: Application = express();
 
@@ -12,7 +14,7 @@ if (envConstants.NODE_ENV !== 'test') {
   app.use(helmet());
 
   // Apply CORS middleware with a whitelist (adjust origins as needed)
-  const allowedOrigins = ['http://localhost:3000'];
+  const allowedOrigins = ['http://localhost:8001'];
 
   const corsOptions = {
     origin: function (origin: string | undefined, callback: (err: Error | null, allow?: boolean) => void) {
@@ -32,12 +34,14 @@ if (envConstants.NODE_ENV !== 'test') {
 
 app.use(express.json());
 
-app.use('/api/v1', () => {});
+app.use('/api/v1', routes);
 
 // Handling non matching request from the client
 app.use('*', () => {
   throw new Error(ErrorTypeEnum.enum.RESOURCE_NOT_FOUND);
 });
+
+app.use(errorHandler);
 
 export const server = () => {
   app.listen(APP_PORT, () => {
