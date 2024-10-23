@@ -3,7 +3,7 @@
     "jsx": "react-jsx",
     "target": "es2021",
     "module": "CommonJS",
-    "rootDir": "./src",
+    "rootDir": ".",
     "moduleResolution": "Node",
     "baseUrl": ".",
     "paths": {
@@ -28,6 +28,6 @@
     "skipLibCheck": true
   },
   "lib": ["es2021"],
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "netlify", "netlify/functions/**/*"],
   "exclude": ["node_modules"]
 }
