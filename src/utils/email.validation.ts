@@ -73,7 +73,7 @@ const emailNotification = z.discriminatedUnion('eventType', [
   }),
   z.object({
     to: emailValidator,
-    eventType: z.literal('sendPasswordResetOTP'),
+    eventType: z.literal('sendForgetPasswordOTP'),
     payload: passwordResetOTPPayload,
     subject: z.string().default('Email Verification OTP'),
   }),

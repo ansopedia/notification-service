@@ -6,6 +6,7 @@ export class EmailService {
 
     const emailHtml = renderEmail(validateEmail);
 
+    // ? not using await because it takes more time to deliver email
     sendEmail({
       to: validateEmail.to,
       subject: validateEmail.subject,
