@@ -1,17 +1,20 @@
 # Changelog
 
+## [1.1.0] - 2025-03-26
+
+- New `Typography` component (#7)
+- New `ForgetPasswordOTP` & `PasswordChangeConfirmation` template (#15)
+
 ## [1.0.0] - 2024-10-29
 
-### Added
-
 - New reusable UI components:
-  - Header component (#8)
-  - Footer component (#8)
-  - Button component (#6)
+  - `Header` component (#8)
+  - `Footer` component (#8)
+  - `Button` component (#6)
 - Email verification system:
-  - EmailVerificationOTP template for OTP-based verification (#10)
-  - EmailWrapper component (#11)
-  - WithEmailWrapper Higher-Order Component (HOC) (#11)
+  - `EmailVerificationOTP` template for OTP-based verification (#10)
+  - `EmailWrapper` component (#11)
+  - `WithEmailWrapper` Higher-Order Component (HOC) (#11)
 - Factory Design Pattern implementation using HOC in React (#11)
 - `recipientName` & `otp` fields in `emailVerificationOTPPayload` (#11)
 
