@@ -1,8 +1,8 @@
 import React from 'react';
-import { getEmailWrapper } from './WrapperFactory';
+import { getEmailWrapper, WrapperType } from './WrapperFactory';
 
 interface WithEmailWrapperOptions {
-  wrapperType?: 'default' | 'minimal' | 'branded';
+  wrapperType?: WrapperType;
   previewText: string;
 }
 

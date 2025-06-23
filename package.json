@@ -1,6 +1,6 @@
 {
   "name": "notification-service",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "notification service for ansopedia",
   "main": "index.js",
   "scripts": {
@@ -26,6 +26,8 @@
   "license": "ISC",
   "dependencies": {
     "@react-email/components": "^0.0.22",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
@@ -34,6 +36,7 @@
     "pino": "^9.3.2",
     "react": "^18.3.1",
     "react-email": "2.1.6",
+    "tailwind-merge": "^2.5.5",
     "zod": "^3.23.8"
   },
   "devDependencies": {

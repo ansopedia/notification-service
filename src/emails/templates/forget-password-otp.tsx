@@ -3,20 +3,20 @@ import { withEmailWrapper } from '../wrappers/withEmailWrapper';
 import { Section } from '@react-email/components';
 import { Typography } from '../components/ui/typography';
 
-interface EmailVerificationOTPProps {
+interface ForgetPasswordOTPProps {
   otp: string;
   recipientName: string;
 }
 
-const EmailVerificationOTPContent: React.FC<EmailVerificationOTPProps> = ({ otp, recipientName }) => {
+const ForgetPasswordOTPContent: React.FC<ForgetPasswordOTPProps> = ({ otp, recipientName }) => {
   return (
     <>
       <Typography variant="h4" className="mb-6">
         Hello {recipientName},
       </Typography>
       <Typography variant="p" className="mb-4">
-        Thank you for signing up with Ansopedia. To complete your registration, please use the following One-Time
-        Password (OTP):
+        We received a request to reset your password for your Ansopedia account. Please use the following One-Time
+        Password (OTP) to verify your identity:
       </Typography>
       <Typography variant="h4">This is your OTP: {otp}</Typography>
       <Section className="bg-gray-100 rounded p-6 text-center my-6">
@@ -25,15 +25,16 @@ const EmailVerificationOTPContent: React.FC<EmailVerificationOTPProps> = ({ otp,
         </Typography>
       </Section>
       <Typography variant="p" className="mb-4">
-        This OTP is valid for 10 minutes. If you didn't request this verification, please ignore this email.
+        This OTP is valid for 10 minutes. If you didn't request this password reset, please ignore this email or contact
+        support immediately.
       </Typography>
     </>
   );
 };
 
-export const EmailVerificationOTP = withEmailWrapper(EmailVerificationOTPContent, {
+export const ForgetPasswordOTP = withEmailWrapper(ForgetPasswordOTPContent, {
   wrapperType: 'default',
-  previewText: 'Your Ansopedia Email Verification OTP',
+  previewText: 'Your Ansopedia Password Reset OTP',
 });
 
-export default EmailVerificationOTP;
+export default ForgetPasswordOTP;
