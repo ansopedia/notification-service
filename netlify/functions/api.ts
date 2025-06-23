@@ -3,10 +3,13 @@ import serverless from 'serverless-http';
 
 import { app } from '../../src/server';
 
+// ✅ initialize once
+const serverlessHandler = serverless(app);
+
 const handler: Handler = async (event: HandlerEvent, context: HandlerContext) => {
   context.callbackWaitsForEmptyEventLoop = false;
 
-  const serverlessHandler = serverless(app);
+  // ✅ reuse the existing wrapped app
   const response = (await serverlessHandler(event, context)) as {
     statusCode: number;
     headers: { [key: string]: string | number | boolean };
