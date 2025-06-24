@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ReactElement, ReactNode } from 'react';
 
 export interface BaseWrapperProps {
   children: ReactNode;
@@ -6,5 +6,5 @@ export interface BaseWrapperProps {
 }
 
 export interface BaseWrapper {
-  (props: BaseWrapperProps): JSX.Element;
+  (props: BaseWrapperProps): ReactElement;
 }

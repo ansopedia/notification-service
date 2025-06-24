@@ -4,7 +4,7 @@ export class EmailService {
   static async sendEmail(emailNotification: EmailNotification): Promise<{ message: string }> {
     const validateEmail = validateEmailNotification(emailNotification);
 
-    const emailHtml = renderEmail(validateEmail);
+    const emailHtml = await renderEmail(validateEmail);
 
     // ? not using await because it takes more time to deliver email
     sendEmail({

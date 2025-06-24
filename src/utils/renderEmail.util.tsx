@@ -4,7 +4,7 @@ import { NotificationType, EmailNotification } from './email.validation';
 import PasswordChangeConfirmation from '../emails/templates/password-change-confirmation';
 import ForgetPasswordOTP from '../emails/templates/forget-password-otp';
 
-export const renderEmail = ({ eventType, payload }: EmailNotification): string => {
+export const renderEmail = ({ eventType, payload }: EmailNotification): Promise<string> => {
   if (eventType === NotificationType.EMAIL_VERIFICATION_OTP) {
     return render(<EmailVerificationOTP {...payload} />);
   }
@@ -17,5 +17,5 @@ export const renderEmail = ({ eventType, payload }: EmailNotification): string =
     return render(<ForgetPasswordOTP {...payload} />);
   }
 
-  return '';
+  return Promise.resolve('');
 };

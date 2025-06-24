@@ -37,8 +37,8 @@ app.use(express.json());
 app.use('/api/v1', routes);
 
 // Handling non matching request from the client
-app.use('*', () => {
-  throw new Error(ErrorTypeEnum.enum.RESOURCE_NOT_FOUND);
+app.use((_req, _res, next) => {
+  next(new Error(ErrorTypeEnum.enum.RESOURCE_NOT_FOUND));
 });
 
 app.use(errorHandler);

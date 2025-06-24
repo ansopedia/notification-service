@@ -1,5 +1,10 @@
 # Changelog
 
+## [1.2.0] - 2025-03-26
+
+- Update all dependencies to their latest versions (#21)
+  - Notable: React 19, Express 5, Nodemailer 7.
+
 ## [1.1.0] - 2025-03-26
 
 - New `Typography` component (#7)
