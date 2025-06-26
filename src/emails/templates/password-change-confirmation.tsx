@@ -9,7 +9,13 @@ interface PasswordChangeConfirmationProps {
   recipientName: string;
 }
 
-const PasswordChangeConfirmationContent: React.FC<PasswordChangeConfirmationProps> = ({ recipientName = "User" }) => {
+const defaultProps: PasswordChangeConfirmationProps = {
+  recipientName: "User",
+};
+
+const PasswordChangeConfirmationContent: React.FC<PasswordChangeConfirmationProps> = (props) => {
+  const { recipientName } = { ...defaultProps, ...props };
+
   return (
     <>
       <Typography variant="h4" className="mb-6">

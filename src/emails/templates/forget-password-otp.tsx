@@ -11,11 +11,15 @@ interface ForgetPasswordOTPProps {
   otpTTL: number; // (TTL = Time To Live)
 }
 
-const ForgetPasswordOTPContent: React.FC<ForgetPasswordOTPProps> = ({
-  otp = "123456",
-  recipientName = "User",
-  otpTTL = 5,
-}) => {
+const defaultProps: ForgetPasswordOTPProps = {
+  otp: "123456",
+  recipientName: "User",
+  otpTTL: 5,
+};
+
+const ForgetPasswordOTPContent: React.FC<ForgetPasswordOTPProps> = (props) => {
+  const { otp, recipientName, otpTTL } = { ...defaultProps, ...props };
+
   return (
     <>
       <Typography variant="h4" className="mb-6">

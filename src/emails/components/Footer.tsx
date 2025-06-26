@@ -37,7 +37,7 @@ export const Footer: React.FC = () => {
           </Link>
         </Column>
       </Row>
-      <Text className="mt-2 text-sm text-white">©2025 Ansopedia. All rights reserved.</Text>
+      <Text className="mt-2 text-sm text-white">©{new Date().getFullYear()} Ansopedia. All rights reserved.</Text>
     </Section>
   );
 };

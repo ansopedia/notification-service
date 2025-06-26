@@ -11,11 +11,15 @@ interface EmailVerificationOTPProps {
   otpTTL: number; // (TTL = Time To Live)
 }
 
-const EmailVerificationOTPContent: React.FC<EmailVerificationOTPProps> = ({
-  otp = "123456",
-  recipientName = "User",
-  otpTTL = 5,
-}) => {
+const defaultProps: EmailVerificationOTPProps = {
+  otp: "123456",
+  recipientName: "User",
+  otpTTL: 5,
+};
+
+const EmailVerificationOTPContent: React.FC<EmailVerificationOTPProps> = (props) => {
+  const { otp, recipientName, otpTTL } = { ...defaultProps, ...props };
+
   return (
     <>
       <Typography variant="h4" className="mb-6">
