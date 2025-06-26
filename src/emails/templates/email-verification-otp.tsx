@@ -8,9 +8,14 @@ import { withEmailWrapper } from "../wrappers/withEmailWrapper";
 interface EmailVerificationOTPProps {
   otp: string;
   recipientName: string;
+  otpTTL: number; // (TTL = Time To Live)
 }
 
-const EmailVerificationOTPContent: React.FC<EmailVerificationOTPProps> = ({ otp, recipientName }) => {
+const EmailVerificationOTPContent: React.FC<EmailVerificationOTPProps> = ({
+  otp = "123456",
+  recipientName = "User",
+  otpTTL = 5,
+}) => {
   return (
     <>
       <Typography variant="h4" className="mb-6">
@@ -20,14 +25,13 @@ const EmailVerificationOTPContent: React.FC<EmailVerificationOTPProps> = ({ otp,
         Thank you for signing up with Ansopedia. To complete your registration, please use the following One-Time
         Password (OTP):
       </Typography>
-      <Typography variant="h4">This is your OTP: {otp}</Typography>
       <Section className="my-6 rounded bg-gray-100 p-6 text-center">
-        <Typography variant="h1" className="m-0 text-black">
+        <Typography variant="h1" className="letter-spacing-2 m-0 text-black">
           {otp}
         </Typography>
       </Section>
       <Typography variant="p" className="mb-4">
-        This OTP is valid for 10 minutes. If you didn't request this verification, please ignore this email.
+        This OTP is valid for {otpTTL} minutes. If you didn't request this verification, please ignore this email.
       </Typography>
     </>
   );

@@ -5,6 +5,8 @@ import { nodemailerConfig } from "@/config";
 
 import { logger } from "./Logger";
 
+const senderEmail = `"Ansopedia" <${nodemailerConfig.auth?.user}>`;
+
 interface EmailOptions extends Mail.Options {
   to: string;
   subject: string;
@@ -17,7 +19,7 @@ export const sendEmail = async (options: EmailOptions) => {
     const transporter = nodemailer.createTransport(nodemailerConfig);
 
     await transporter.sendMail({
-      from: nodemailerConfig.auth?.user,
+      from: senderEmail,
       ...options,
     });
   } catch (error) {

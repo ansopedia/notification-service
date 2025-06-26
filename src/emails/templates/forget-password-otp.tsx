@@ -8,9 +8,14 @@ import { withEmailWrapper } from "../wrappers/withEmailWrapper";
 interface ForgetPasswordOTPProps {
   otp: string;
   recipientName: string;
+  otpTTL: number; // (TTL = Time To Live)
 }
 
-const ForgetPasswordOTPContent: React.FC<ForgetPasswordOTPProps> = ({ otp, recipientName }) => {
+const ForgetPasswordOTPContent: React.FC<ForgetPasswordOTPProps> = ({
+  otp = "123456",
+  recipientName = "User",
+  otpTTL = 5,
+}) => {
   return (
     <>
       <Typography variant="h4" className="mb-6">
@@ -27,8 +32,8 @@ const ForgetPasswordOTPContent: React.FC<ForgetPasswordOTPProps> = ({ otp, recip
         </Typography>
       </Section>
       <Typography variant="p" className="mb-4">
-        This OTP is valid for 10 minutes. If you didn't request this password reset, please ignore this email or contact
-        support immediately.
+        This OTP is valid for {otpTTL} minutes. If you didn't request this password reset, please ignore this email or
+        contact support immediately.
       </Typography>
     </>
   );

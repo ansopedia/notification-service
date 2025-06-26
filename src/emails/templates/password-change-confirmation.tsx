@@ -9,7 +9,7 @@ interface PasswordChangeConfirmationProps {
   recipientName: string;
 }
 
-const PasswordChangeConfirmationContent: React.FC<PasswordChangeConfirmationProps> = ({ recipientName }) => {
+const PasswordChangeConfirmationContent: React.FC<PasswordChangeConfirmationProps> = ({ recipientName = "User" }) => {
   return (
     <>
       <Typography variant="h4" className="mb-6">

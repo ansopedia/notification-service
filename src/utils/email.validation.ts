@@ -43,6 +43,7 @@ export const otpValidator = z.string().length(6, "OTP must be exactly 6 characte
 const emailVerificationOTPPayload = z.object({
   otp: otpValidator,
   recipientName: z.string().min(1, "Recipient name is required"),
+  otpTTL: z.number(), // (TTL = Time To Live)
 });
 
 // const emailVerificationMagicLinkPayload = z.object({
@@ -56,6 +57,7 @@ const emailVerificationOTPPayload = z.object({
 const passwordResetOTPPayload = z.object({
   otp: otpValidator,
   recipientName: z.string().min(1, "Recipient name is required"),
+  otpTTL: z.number(), // (TTL = Time To Live)
 });
 
 const passwordChangeConfirmationPayload = z.object({
