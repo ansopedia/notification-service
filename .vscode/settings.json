@@ -1,0 +1,12 @@
+{
+  "cSpell.words": ["maxlength", "Parens", "pino", "trivago"],
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "always",
+    "source.organizeImports": "always"
+  },
+  "typescript.tsdk": "node_modules\\typescript\\lib",
+  "cSpell.language": "en-GB",
+  "cSpell.dictionaries": ["en-GB"],
+  "cSpell.allowCompoundWords": true
+}

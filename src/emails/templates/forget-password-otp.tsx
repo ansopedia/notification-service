@@ -1,7 +1,9 @@
-import React from 'react';
-import { withEmailWrapper } from '../wrappers/withEmailWrapper';
-import { Section } from '@react-email/components';
-import { Typography } from '../components/ui/typography';
+import React from "react";
+
+import { Section } from "@react-email/components";
+
+import { Typography } from "../components/ui/typography";
+import { withEmailWrapper } from "../wrappers/withEmailWrapper";
 
 interface ForgetPasswordOTPProps {
   otp: string;
@@ -19,7 +21,7 @@ const ForgetPasswordOTPContent: React.FC<ForgetPasswordOTPProps> = ({ otp, recip
         Password (OTP) to verify your identity:
       </Typography>
       <Typography variant="h4">This is your OTP: {otp}</Typography>
-      <Section className="bg-gray-100 rounded p-6 text-center my-6">
+      <Section className="my-6 rounded bg-gray-100 p-6 text-center">
         <Typography variant="h1" className="m-0 text-black">
           {otp}
         </Typography>
@@ -33,8 +35,8 @@ const ForgetPasswordOTPContent: React.FC<ForgetPasswordOTPProps> = ({ otp, recip
 };
 
 export const ForgetPasswordOTP = withEmailWrapper(ForgetPasswordOTPContent, {
-  wrapperType: 'default',
-  previewText: 'Your Ansopedia Password Reset OTP',
+  wrapperType: "default",
+  previewText: "Your Ansopedia Password Reset OTP",
 });
 
 export default ForgetPasswordOTP;

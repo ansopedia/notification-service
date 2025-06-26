@@ -1,5 +1,6 @@
-import React from 'react';
-import { getEmailWrapper, WrapperType } from './WrapperFactory';
+import React from "react";
+
+import { WrapperType, getEmailWrapper } from "./WrapperFactory";
 
 interface WithEmailWrapperOptions {
   wrapperType?: WrapperType;
@@ -8,7 +9,7 @@ interface WithEmailWrapperOptions {
 
 export const withEmailWrapper = <P extends object>(
   WrappedComponent: React.ComponentType<P>,
-  options: WithEmailWrapperOptions,
+  options: WithEmailWrapperOptions
 ) => {
   const Wrapper = getEmailWrapper(options.wrapperType);
 

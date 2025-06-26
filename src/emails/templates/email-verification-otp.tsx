@@ -1,7 +1,9 @@
-import React from 'react';
-import { withEmailWrapper } from '../wrappers/withEmailWrapper';
-import { Section } from '@react-email/components';
-import { Typography } from '../components/ui/typography';
+import React from "react";
+
+import { Section } from "@react-email/components";
+
+import { Typography } from "../components/ui/typography";
+import { withEmailWrapper } from "../wrappers/withEmailWrapper";
 
 interface EmailVerificationOTPProps {
   otp: string;
@@ -19,7 +21,7 @@ const EmailVerificationOTPContent: React.FC<EmailVerificationOTPProps> = ({ otp,
         Password (OTP):
       </Typography>
       <Typography variant="h4">This is your OTP: {otp}</Typography>
-      <Section className="bg-gray-100 rounded p-6 text-center my-6">
+      <Section className="my-6 rounded bg-gray-100 p-6 text-center">
         <Typography variant="h1" className="m-0 text-black">
           {otp}
         </Typography>
@@ -32,8 +34,8 @@ const EmailVerificationOTPContent: React.FC<EmailVerificationOTPProps> = ({ otp,
 };
 
 export const EmailVerificationOTP = withEmailWrapper(EmailVerificationOTPContent, {
-  wrapperType: 'default',
-  previewText: 'Your Ansopedia Email Verification OTP',
+  wrapperType: "default",
+  previewText: "Your Ansopedia Email Verification OTP",
 });
 
 export default EmailVerificationOTP;

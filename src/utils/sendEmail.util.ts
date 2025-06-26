@@ -1,7 +1,9 @@
-import nodemailer from 'nodemailer';
-import { nodemailerConfig } from '@/config';
-import Mail from 'nodemailer/lib/mailer';
-import { logger } from './Logger';
+import nodemailer from "nodemailer";
+import Mail from "nodemailer/lib/mailer";
+
+import { nodemailerConfig } from "@/config";
+
+import { logger } from "./Logger";
 
 interface EmailOptions extends Mail.Options {
   to: string;
@@ -19,7 +21,7 @@ export const sendEmail = async (options: EmailOptions) => {
       ...options,
     });
   } catch (error) {
-    logger.error('Error sending email:', error);
+    logger.error("Error sending email:", error);
     throw error;
   }
 };

@@ -1,7 +1,8 @@
-import { NextFunction, Request, Response } from 'express';
-import { sendResponse } from '../../../utils';
-import { EmailService } from './email.service';
-import { STATUS_CODES } from '../../../constants';
+import { NextFunction, Request, Response } from "express";
+
+import { STATUS_CODES } from "../../../constants";
+import { sendResponse } from "../../../utils";
+import { EmailService } from "./email.service";
 
 export class EmailController {
   static async sendEmail(req: Request, res: Response, next: NextFunction) {

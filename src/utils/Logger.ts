@@ -1,9 +1,9 @@
-import path from 'path';
-import pino, { type DestinationStream } from 'pino';
-import fs from 'fs';
+import fs from "fs";
+import path from "path";
+import pino, { type DestinationStream } from "pino";
 
 // Define the log directory path
-const logDirectory = path.join(process.cwd(), 'log');
+const logDirectory = path.join(process.cwd(), "log");
 
 // Create a basic console logger for logging errors in this setup phase
 const consoleLogger = pino();
@@ -19,27 +19,27 @@ try {
 }
 
 const transport: DestinationStream = pino.transport({
-  target: 'pino/file',
-  options: { destination: path.join(logDirectory, 'app.log') },
+  target: "pino/file",
+  options: { destination: path.join(logDirectory, "app.log") },
 });
 
 export const logger = pino(
   {
-    level: process.env.PINO_LOG_LEVEL ?? 'info',
+    level: process.env.PINO_LOG_LEVEL ?? "info",
     timestamp: pino.stdTimeFunctions.isoTime,
   },
-  transport,
+  transport
 );
 
 const errorTransport: DestinationStream = pino.transport({
-  target: 'pino/file',
-  options: { destination: path.join(logDirectory, 'server.log') },
+  target: "pino/file",
+  options: { destination: path.join(logDirectory, "server.log") },
 });
 
 export const errorLogger = pino(
   {
-    level: 'error',
+    level: "error",
     timestamp: pino.stdTimeFunctions.isoTime,
   },
-  errorTransport,
+  errorTransport
 );

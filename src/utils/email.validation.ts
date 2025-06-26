@@ -1,16 +1,16 @@
-import { z } from 'zod';
+import { z } from "zod";
 
 export enum NotificationType {
   // Email verification
-  EMAIL_VERIFICATION_OTP = 'emailVerificationOtp',
+  EMAIL_VERIFICATION_OTP = "emailVerificationOtp",
   // EMAIL_VERIFICATION_MAGIC_LINK = 'emailVerificationMagicLink',
 
   // Email changes
   // EMAIL_CHANGE_CONFIRMATION = 'emailChangeConfirmation',
 
   // Password operations
-  FORGET_PASSWORD_OTP = 'forgetPasswordOtp',
-  PASSWORD_CHANGE_CONFIRMATION = 'passwordChangeConfirmation',
+  FORGET_PASSWORD_OTP = "forgetPasswordOtp",
+  PASSWORD_CHANGE_CONFIRMATION = "passwordChangeConfirmation",
 
   // Phone verification
   // PHONE_VERIFICATION = 'phoneVerification',
@@ -37,12 +37,12 @@ export const emailValidator = z
   .email()
   .transform((val) => val.toLowerCase().trim());
 
-export const otpValidator = z.string().length(6, 'OTP must be exactly 6 characters');
+export const otpValidator = z.string().length(6, "OTP must be exactly 6 characters");
 
 //  Specific payload schemas
 const emailVerificationOTPPayload = z.object({
   otp: otpValidator,
-  recipientName: z.string().min(1, 'Recipient name is required'),
+  recipientName: z.string().min(1, "Recipient name is required"),
 });
 
 // const emailVerificationMagicLinkPayload = z.object({
@@ -55,15 +55,15 @@ const emailVerificationOTPPayload = z.object({
 
 const passwordResetOTPPayload = z.object({
   otp: otpValidator,
-  recipientName: z.string().min(1, 'Recipient name is required'),
+  recipientName: z.string().min(1, "Recipient name is required"),
 });
 
 const passwordChangeConfirmationPayload = z.object({
-  recipientName: z.string().min(1, 'Recipient name is required'),
+  recipientName: z.string().min(1, "Recipient name is required"),
 });
 
 // Define the email notification schema
-const emailNotification = z.discriminatedUnion('eventType', [
+const emailNotification = z.discriminatedUnion("eventType", [
   z.object({
     to: emailValidator,
     eventType: z.literal(NotificationType.EMAIL_VERIFICATION_OTP),
@@ -104,7 +104,7 @@ export const validateEmailNotification = (data: EmailNotification) => {
     if (error instanceof z.ZodError) {
       // Customize error messages
       const customErrors = error.issues.map((issue) => {
-        if (issue.code === 'invalid_type' && issue.path.includes('payload')) {
+        if (issue.code === "invalid_type" && issue.path.includes("payload")) {
           const fieldName = issue.path[issue.path.length - 1];
           return {
             ...issue,

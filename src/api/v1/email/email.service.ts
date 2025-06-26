@@ -1,4 +1,4 @@
-import { EmailNotification, renderEmail, sendEmail, validateEmailNotification } from '@/utils';
+import { EmailNotification, renderEmail, sendEmail, validateEmailNotification } from "@/utils";
 
 export class EmailService {
   static async sendEmail(emailNotification: EmailNotification): Promise<{ message: string }> {
@@ -13,6 +13,6 @@ export class EmailService {
       html: emailHtml,
     });
 
-    return { message: 'Email sent successfully' };
+    return { message: "Email sent successfully" };
   }
 }
