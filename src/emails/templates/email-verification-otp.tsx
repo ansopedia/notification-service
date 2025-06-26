@@ -8,13 +8,13 @@ import { withEmailWrapper } from "../wrappers/withEmailWrapper";
 interface EmailVerificationOTPProps {
   otp: string;
   recipientName: string;
-  otpTTL: number; // (TTL = Time To Live)
+  otpTTL: string; // (TTL = Time To Live)
 }
 
 const defaultProps: EmailVerificationOTPProps = {
   otp: "123456",
   recipientName: "User",
-  otpTTL: 5,
+  otpTTL: "5 minutes", // Default TTL for OTP
 };
 
 const EmailVerificationOTPContent: React.FC<EmailVerificationOTPProps> = (props) => {
@@ -35,7 +35,7 @@ const EmailVerificationOTPContent: React.FC<EmailVerificationOTPProps> = (props)
         </Typography>
       </Section>
       <Typography variant="p" className="mb-4">
-        This OTP is valid for {otpTTL} minutes. If you didn't request this verification, please ignore this email.
+        This OTP is valid for {otpTTL}. If you didn't request this verification, please ignore this email.
       </Typography>
     </>
   );
