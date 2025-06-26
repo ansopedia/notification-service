@@ -1,6 +1,16 @@
 # Changelog
 
-## [1.2.0] - 2025-03-26
+## [1.3.0] - 2025-06-26
+
+- Enhance OTP Email Template (#18)
+  - New `otpTTL` field (in minutes) is now required for OTP-related event types:
+    - `forgetPasswordOtp`: Controls password reset OTP expiration
+    - `emailVerificationOtp`: Controls email verification OTP expiration
+  - Add default values and TTL field
+  - Update styling and formatting
+  - Refresh footer content
+
+## [1.2.0] - 2025-06-24
 
 - Update all dependencies to their latest versions (#21)
   - Notable: React 19, Express 5, Nodemailer 7.

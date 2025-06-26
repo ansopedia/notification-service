@@ -1,8 +1,10 @@
-import { render } from '@react-email/components';
-import { EmailVerificationOTP } from '@/emails';
-import { NotificationType, EmailNotification } from './email.validation';
-import PasswordChangeConfirmation from '../emails/templates/password-change-confirmation';
-import ForgetPasswordOTP from '../emails/templates/forget-password-otp';
+import { render } from "@react-email/components";
+
+import { EmailVerificationOTP } from "@/emails";
+
+import ForgetPasswordOTP from "../emails/templates/forget-password-otp";
+import PasswordChangeConfirmation from "../emails/templates/password-change-confirmation";
+import { EmailNotification, NotificationType } from "./email.validation";
 
 export const renderEmail = ({ eventType, payload }: EmailNotification): Promise<string> => {
   if (eventType === NotificationType.EMAIL_VERIFICATION_OTP) {
@@ -17,5 +19,5 @@ export const renderEmail = ({ eventType, payload }: EmailNotification): Promise<
     return render(<ForgetPasswordOTP {...payload} />);
   }
 
-  return Promise.resolve('');
+  return Promise.resolve("");
 };

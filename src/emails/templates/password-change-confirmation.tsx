@@ -1,13 +1,21 @@
-import React from 'react';
-import { withEmailWrapper } from '../wrappers/withEmailWrapper';
-import { Section } from '@react-email/components';
-import { Typography } from '../components/ui/typography';
+import React from "react";
+
+import { Section } from "@react-email/components";
+
+import { Typography } from "../components/ui/typography";
+import { withEmailWrapper } from "../wrappers/withEmailWrapper";
 
 interface PasswordChangeConfirmationProps {
   recipientName: string;
 }
 
-const PasswordChangeConfirmationContent: React.FC<PasswordChangeConfirmationProps> = ({ recipientName }) => {
+const defaultProps: PasswordChangeConfirmationProps = {
+  recipientName: "User",
+};
+
+const PasswordChangeConfirmationContent: React.FC<PasswordChangeConfirmationProps> = (props) => {
+  const { recipientName } = { ...defaultProps, ...props };
+
   return (
     <>
       <Typography variant="h4" className="mb-6">
@@ -16,7 +24,7 @@ const PasswordChangeConfirmationContent: React.FC<PasswordChangeConfirmationProp
       <Typography variant="p" className="mb-4">
         This is a confirmation that your password for your Ansopedia account has been successfully changed.
       </Typography>
-      <Section className="bg-gray-100 rounded p-6 text-center my-6">
+      <Section className="my-6 rounded bg-gray-100 p-6 text-center">
         <Typography variant="h2" className="m-0 text-black">
           Password Changed Successfully
         </Typography>
@@ -32,8 +40,8 @@ const PasswordChangeConfirmationContent: React.FC<PasswordChangeConfirmationProp
 };
 
 export const PasswordChangeConfirmation = withEmailWrapper(PasswordChangeConfirmationContent, {
-  wrapperType: 'default',
-  previewText: 'Your Ansopedia Password Has Been Changed',
+  wrapperType: "default",
+  previewText: "Your Ansopedia Password Has Been Changed",
 });
 
 export default PasswordChangeConfirmation;

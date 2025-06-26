@@ -1,20 +1,22 @@
-import express, { type Application } from 'express';
-import { envConstants, ErrorTypeEnum } from '@/constants';
-import helmet from 'helmet';
-import cors from 'cors';
-import { errorHandler } from './middleware/errorHandler';
-import { routes } from './api/v1';
+import cors from "cors";
+import express, { type Application } from "express";
+import helmet from "helmet";
+
+import { ErrorTypeEnum, envConstants } from "@/constants";
+
+import { routes } from "./api/v1";
+import { errorHandler } from "./middleware/errorHandler";
 
 export const app: Application = express();
 
 const { APP_PORT } = envConstants;
 
-if (envConstants.NODE_ENV !== 'test') {
+if (envConstants.NODE_ENV !== "test") {
   // Apply Helmet middleware with default options
   app.use(helmet());
 
   // Apply CORS middleware with a whitelist (adjust origins as needed)
-  const allowedOrigins = ['http://localhost:8001'];
+  const allowedOrigins = ["http://localhost:8001"];
 
   const corsOptions = {
     origin: function (origin: string | undefined, callback: (err: Error | null, allow?: boolean) => void) {
@@ -34,7 +36,7 @@ if (envConstants.NODE_ENV !== 'test') {
 
 app.use(express.json());
 
-app.use('/api/v1', routes);
+app.use("/api/v1", routes);
 
 // Handling non matching request from the client
 app.use((_req, _res, next) => {

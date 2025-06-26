@@ -1,1 +1,1 @@
-export * from './nodemailer.config';
+export * from "./nodemailer.config";
