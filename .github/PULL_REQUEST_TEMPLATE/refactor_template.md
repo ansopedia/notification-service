@@ -1,5 +1,3 @@
-## 🧹 Refactor Description
-
 Describe the changes made for code cleanup, restructuring, or optimization.  
 Clearly mention if the behavior or logic remains unchanged.
 

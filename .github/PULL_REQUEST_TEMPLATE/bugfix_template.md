@@ -1,7 +1,3 @@
-<!-- .github/PULL_REQUEST_TEMPLATE/bugfix_template.md -->
-
-## 🐛 Bug Fix Description
-
 What was the bug? How was it fixed?
 
 ## 🔗 Related Issues
