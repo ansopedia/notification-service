@@ -1,0 +1,19 @@
+name: Task
+description: Template for tracking tasks or to-dos
+title: "[TASK] "
+labels: [task]
+body:
+  - "## Task Summary"
+  - ""
+  - "[Provide a short description of the task.]"
+  - ""
+  - "## Details"
+  - ""
+  - "[Provide detailed information about the task.]"
+  - ""
+  - "## Environment"
+  - ""
+  - "- Operating System:"
+  - "- Node.js version:"
+  - "- pnpm version:"
+  - "- Project version:"

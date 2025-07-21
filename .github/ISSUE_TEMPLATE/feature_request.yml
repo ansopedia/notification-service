@@ -1,0 +1,27 @@
+name: Feature Request
+description: Template for suggesting new features or enhancements
+title: "[FEATURE] "
+labels: [enhancement]
+body:
+  - "## Feature Summary"
+  - ""
+  - "[Provide a short summary of the feature or enhancement.]"
+  - ""
+  - "## Motivation"
+  - ""
+  - "[Explain why this feature is needed and the problem it solves.]"
+  - ""
+  - "## Proposed Solution"
+  - ""
+  - "[Describe the solution or approach you suggest.]"
+  - ""
+  - "## Alternatives Considered"
+  - ""
+  - "[List any alternative solutions or features you considered.]"
+  - ""
+  - "## Environment"
+  - ""
+  - "- Operating System:"
+  - "- Node.js version:"
+  - "- pnpm version:"
+  - "- Project version:"

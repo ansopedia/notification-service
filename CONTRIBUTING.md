@@ -17,8 +17,6 @@ By participating in this project, you agree to uphold our [Code of Conduct](./CO
 - A **Contributor** is any individual who creates an issue/PR, comments on an issue/PR, or contributes in some other way.
 - A **Collaborator** is a contributor with write access to the repository. See [here](#becoming-a-collaborator) on how to become a collaborator.
 
-You can find more details and guides about Collaborating with this repository through our [Collaborator Guide](./COLLABORATOR_GUIDE.md).
-
 ### Becoming a Collaborator
 
 A collaborator of the Ansopedia and its repository is a member of the Ansopedia Team.
@@ -72,9 +70,9 @@ Once you've forked the repository, clone it to your local machine:
 Clone your fork using SSH, GitHub CLI, or HTTPS.
 
 ```bash
-git clone git@github.com:ansopedia/notification-service.git # SSH
-git clone https://github.com/ansopedia/notification-service.git # HTTPS
-gh repo clone ansopedia/notification-service # GitHub CLI
+git clone git@github.com:<YOUR_USERNAME>/notification-service.git # SSH
+git clone https://github.com/<YOUR_USERNAME>/notification-service.git # HTTPS
+gh repo clone <YOUR_USERNAME>/notification-service # GitHub CLI
 ```
 
 #### 3. Change into the notification-service directory.
@@ -88,7 +86,7 @@ cd notification-service
 Create a new branch for your feature, bug fix, or documentation update:
 
 ```bash
-  git checkout -b <name-of-your-branch>
+git checkout -b <name-of-your-branch>
 ```
 
 #### 5. **Install Dependencies**
@@ -126,7 +124,7 @@ git commit -m "Add new feature for notification registration"
 Push your changes to your forked Repository on GitHub:
 
 ```bash
-  git push -u origin name-of-your-branch
+git push -u origin name-of-your-branch
 ```
 
 #### 10. **Create a Pull Request (PR)**
@@ -168,7 +166,7 @@ Ensure that your code adheres to the existing coding standards and passes all te
 
 ### Pre-commit Hooks
 
-This project uses [Husky][] for Git pre-commit hooks.
+This project uses [Husky](https://typicode.github.io/husky/) for Git pre-commit hooks.
 
 ### When merging
 
