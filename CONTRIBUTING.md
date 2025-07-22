@@ -124,7 +124,7 @@ git commit -m "Add new feature for notification registration"
 Push your changes to your forked Repository on GitHub:
 
 ```bash
-git push -u origin name-of-your-branch
+git push -u origin <name-of-your-branch>
 ```
 
 #### 10. **Create a Pull Request (PR)**

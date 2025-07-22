@@ -12,6 +12,8 @@ body:
       label: "What happened?"
       description: "Describe what the bug is, and how to reproduce it."
       placeholder: "Steps to reproduce the bug..."
+      validations:
+        required: true
   - type: textarea
     id: steps-to-reproduce
     attributes:
@@ -22,6 +24,8 @@ body:
         3. Scroll down to '...'
         4. See error
       placeholder: "List the steps to reproduce the bug..."
+      validations:
+        required: true
   - type: input
     id: environment
     attributes:
