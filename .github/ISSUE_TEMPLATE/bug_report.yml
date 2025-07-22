@@ -1,0 +1,34 @@
+name: "🐛 Bug Report"
+description: "Report a bug in the application"
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Describe the Bug
+  - type: textarea
+    id: bug-description
+    attributes:
+      label: "What happened?"
+      description: "Describe what the bug is, and how to reproduce it."
+      placeholder: "Steps to reproduce the bug..."
+      validations:
+        required: true
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: "Steps to Reproduce"
+      description: |
+        1. Go to '...'
+        2. Click on '...'
+        3. Scroll down to '...'
+        4. See error
+      placeholder: "List the steps to reproduce the bug..."
+      validations:
+        required: true
+  - type: input
+    id: environment
+    attributes:
+      label: "Environment (OS, Node.js, pnpm, Project version)"
+      description: "Provide details about your environment to help with debugging."
+      placeholder: "e.g. Ubuntu 20.04, Node.js 16.13.0, pnpm 6.14.5, v1.2.3"
