@@ -12,16 +12,16 @@ body:
       label: "Summary"
       description: "Provide a short summary of the feature or enhancement."
       placeholder: "Briefly describe the feature..."
-      validations:
-        required: true
+    validations:
+      required: true
   - type: textarea
     id: motivation
     attributes:
       label: "Motivation"
       description: "Explain why this feature is needed and the problem it solves."
       placeholder: "Why is this feature important?"
-      validations:
-        required: true
+    validations:
+      required: true
   - type: textarea
     id: proposed-solution
     attributes:
