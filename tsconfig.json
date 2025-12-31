@@ -1,17 +1,18 @@
 {
   "compilerOptions": {
-    "jsx": "react-jsx",
-    "target": "es2021",
-    "module": "CommonJS",
+    "target": "ES2022",
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
     "rootDir": "./src",
-    "moduleResolution": "Node",
-    "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["./src/emails/*"],
+      "@/constants": ["./src/constants/index.js"],
+      "@/config": ["./src/config/index.js"],
+      "@/utils": ["./src/utils/index.js"]
     },
-    "sourceMap": true,
+    "resolveJsonModule": true,
+    "sourceMap": false,
     "outDir": "./build",
-    "sourceRoot": "./src",
     "noEmitOnError": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
@@ -23,11 +24,15 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noImplicitReturns": true,
+    "isolatedModules": true,
     "noFallthroughCasesInSwitch": true,
+    "verbatimModuleSyntax": true,
+    "erasableSyntaxOnly": true,
     "noImplicitOverride": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "lib": ["ES2022"],
+    "jsx": "react-jsx"
   },
-  "lib": ["es2021"],
   "include": ["src/**/*"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "./*.ts", "__test__"]
 }

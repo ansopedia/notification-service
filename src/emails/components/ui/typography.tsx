@@ -1,27 +1,27 @@
 import * as React from "react";
 
 import { Heading, Text } from "@react-email/components";
-import { VariantProps, cva } from "class-variance-authority";
+import { type VariantProps, cva } from "class-variance-authority";
 
-import { cn } from "@/emails/lib/utils";
+import { cn } from "../../lib/utils.js";
 
-const typographyVariants = cva("text-foreground", {
+const typographyVariants = cva("text-foreground leading-[130%]", {
   variants: {
     variant: {
-      h1: "text-4xl font-extrabold tracking-tight",
-      h2: "border-b pb-2 text-3xl font-semibold tracking-tight",
-      h3: "text-2xl font-semibold tracking-tight",
-      h4: "text-xl font-semibold tracking-tight",
-      h5: "text-lg font-semibold tracking-tight",
-      h6: "text-base font-semibold tracking-tight",
-      p: "leading-7 [&:not(:first-child)]:mt-6",
+      h1: "scroll-m-20 text-4xl font-bold",
+      h2: "scroll-m-20 pb-2 text-3xl font-semibold",
+      h3: "scroll-m-20 text-2xl font-semibold",
+      h4: "scroll-m-20 text-xl font-semibold",
+      h5: "scroll-m-20 text-lg font-semibold",
+      h6: "scroll-m-20 text-base font-semibold",
+      p: "leading-7",
       blockquote: "mt-6 border-l-2 pl-6 italic",
-      ul: "ml-6 list-disc [&>li]:mt-2",
-      inlineCode: "rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold",
+      ul: "my-6 ml-6 list-disc [&>li]:mt-2",
+      inlineCode: "relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold",
       lead: "text-xl text-muted-foreground",
       largeText: "text-lg font-semibold",
       smallText: "text-sm font-medium leading-none",
-      mutedText: "text-sm text-muted-foreground",
+      mutedText: "text-muted-foreground",
     },
   },
   defaultVariants: {

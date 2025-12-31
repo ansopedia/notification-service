@@ -1,19 +1,16 @@
 import React from "react";
 
+import type { PasswordChangeConfirmationPayload } from "@ansospace/types";
 import { Section } from "@react-email/components";
 
-import { Typography } from "../components/ui/typography";
-import { withEmailWrapper } from "../wrappers/withEmailWrapper";
+import { Typography } from "@/components/ui/typography.js";
+import { withEmailWrapper } from "@/wrappers/withEmailWrapper.js";
 
-interface PasswordChangeConfirmationProps {
-  recipientName: string;
-}
-
-const defaultProps: PasswordChangeConfirmationProps = {
+const defaultProps: PasswordChangeConfirmationPayload = {
   recipientName: "User",
 };
 
-const PasswordChangeConfirmationContent: React.FC<PasswordChangeConfirmationProps> = (props) => {
+const PasswordChangeConfirmationContent: React.FC<PasswordChangeConfirmationPayload> = (props) => {
   const { recipientName } = { ...defaultProps, ...props };
 
   return (

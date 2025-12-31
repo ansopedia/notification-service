@@ -1,9 +1,9 @@
 import nodemailer from "nodemailer";
-import Mail from "nodemailer/lib/mailer";
+import type Mail from "nodemailer/lib/mailer/index.js";
 
 import { nodemailerConfig } from "@/config";
 
-import { logger } from "./Logger";
+import { logger } from "./Logger.js";
 
 const senderEmail = `"Ansopedia" <${nodemailerConfig.auth?.user}>`;
 
@@ -23,7 +23,7 @@ export const sendEmail = async (options: EmailOptions) => {
       ...options,
     });
   } catch (error) {
-    logger.error("Error sending email:", error);
+    logger.error(`Error sending email: ${error}`);
     throw error;
   }
 };

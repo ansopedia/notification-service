@@ -1,23 +1,18 @@
 import React from "react";
 
+import { type ForgetPasswordOtpPayload, otpSchema } from "@ansospace/types";
 import { Section } from "@react-email/components";
 
-import { Typography } from "../components/ui/typography";
-import { withEmailWrapper } from "../wrappers/withEmailWrapper";
+import { Typography } from "@/components/ui/typography.js";
+import { withEmailWrapper } from "@/wrappers/withEmailWrapper.js";
 
-interface ForgetPasswordOTPProps {
-  otp: string;
-  recipientName: string;
-  otpTTL: string; // (TTL = Time To Live)
-}
-
-const defaultProps: ForgetPasswordOTPProps = {
-  otp: "123456",
+const defaultProps: ForgetPasswordOtpPayload = {
+  otp: otpSchema.parse("123456"),
   recipientName: "User",
   otpTTL: "5 minutes", // Default TTL for OTP
 };
 
-const ForgetPasswordOTPContent: React.FC<ForgetPasswordOTPProps> = (props) => {
+const ForgetPasswordOTPContent: React.FC<ForgetPasswordOtpPayload> = (props) => {
   const { otp, recipientName, otpTTL } = { ...defaultProps, ...props };
 
   return (

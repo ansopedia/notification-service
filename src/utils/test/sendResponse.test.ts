@@ -1,6 +1,6 @@
-import { Response } from "express";
+import { type Response } from "express";
 
-import { SendResponse, sendResponse } from "../sendResponse.util";
+import { type SendResponse, sendResponse } from "../sendResponse.util.js";
 
 describe("sendResponse", () => {
   it("should return a successful response with the correct payload", () => {

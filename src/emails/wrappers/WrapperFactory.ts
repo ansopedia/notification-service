@@ -1,5 +1,5 @@
-import { BaseWrapper } from "./BaseWrapper";
-import { DefaultWrapper } from "./DefaultWrapper";
+import { type BaseWrapper } from "./BaseWrapper.js";
+import { DefaultWrapper } from "./DefaultWrapper.js";
 
 export type WrapperType = "default" | "minimal" | "branded";
 

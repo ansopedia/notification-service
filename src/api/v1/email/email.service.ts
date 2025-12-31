@@ -1,4 +1,6 @@
-import { EmailNotification, renderEmail, sendEmail, validateEmailNotification } from "@/utils";
+import { type EmailNotification, validateEmailNotification } from "@ansospace/types";
+
+import { renderEmail, sendEmail } from "@/utils";
 
 export class EmailService {
   static async sendEmail(emailNotification: EmailNotification): Promise<{ message: string }> {

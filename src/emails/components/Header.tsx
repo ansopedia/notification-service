@@ -16,7 +16,7 @@ export const Header: React.FC = () => {
           />
         </Column>
         <Column>
-          <Text className="m-0 inline-block align-middle font-sans text-2xl font-bold uppercase tracking-wider text-white">
+          <Text className="m-0 inline-block align-middle font-sans text-2xl font-bold tracking-wider text-white uppercase">
             Ansopedia
           </Text>
         </Column>

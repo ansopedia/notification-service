@@ -1,8 +1,8 @@
-import { Response, request } from "express";
+import { type Response, request } from "express";
 
 import { envConstants } from "@/constants";
 
-import { errorLogger } from "./Logger";
+import { errorLogger } from "./Logger.js";
 
 export interface SendResponse<T = undefined> {
   response: Response;

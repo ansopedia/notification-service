@@ -15,7 +15,7 @@ try {
   }
 } catch (error) {
   consoleLogger.error(`Failed to create log directory: ${(error as Error).message}`);
-  process.exit(1);
+  throw new Error(`Failed to create log directory: ${(error as Error).message}`);
 }
 
 const transport: DestinationStream = pino.transport({

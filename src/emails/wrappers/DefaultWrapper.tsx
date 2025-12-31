@@ -1,8 +1,9 @@
 import { Body, Container, Head, Html, Preview, Section, Tailwind } from "@react-email/components";
 
-import { Footer } from "../components/Footer";
-import { Header } from "../components/Header";
-import { BaseWrapper, BaseWrapperProps } from "./BaseWrapper";
+import { Footer } from "@/components/Footer.js";
+import { Header } from "@/components/Header.js";
+
+import type { BaseWrapper, BaseWrapperProps } from "./BaseWrapper.js";
 
 export const DefaultWrapper: BaseWrapper = ({ children, previewText }: BaseWrapperProps) => {
   return (

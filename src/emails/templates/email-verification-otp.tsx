@@ -1,23 +1,17 @@
-import React from "react";
-
+import { type EmailVerificationOtpPayload, otpSchema } from "@ansospace/types";
 import { Section } from "@react-email/components";
 
-import { Typography } from "../components/ui/typography";
-import { withEmailWrapper } from "../wrappers/withEmailWrapper";
+import { Typography } from "@/components/ui/typography.js";
 
-interface EmailVerificationOTPProps {
-  otp: string;
-  recipientName: string;
-  otpTTL: string; // (TTL = Time To Live)
-}
+import { withEmailWrapper } from "../wrappers/withEmailWrapper.js";
 
-const defaultProps: EmailVerificationOTPProps = {
-  otp: "123456",
+const defaultProps: EmailVerificationOtpPayload = {
+  otp: otpSchema.parse("123456"),
   recipientName: "User",
   otpTTL: "5 minutes", // Default TTL for OTP
 };
 
-const EmailVerificationOTPContent: React.FC<EmailVerificationOTPProps> = (props) => {
+const EmailVerificationOTPContent: React.FC<EmailVerificationOtpPayload> = (props) => {
   const { otp, recipientName, otpTTL } = { ...defaultProps, ...props };
 
   return (

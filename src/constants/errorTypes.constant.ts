@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-import { STATUS_CODES } from "./statusCode.constant";
+import { STATUS_CODES } from "./statusCode.constant.js";
 
 const errorType = [
   "VALIDATION_ERROR",

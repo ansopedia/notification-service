@@ -4,8 +4,8 @@ import helmet from "helmet";
 
 import { ErrorTypeEnum, envConstants } from "@/constants";
 
-import { routes } from "./api/v1";
-import { errorHandler } from "./middleware/errorHandler";
+import { routes } from "./api/v1/index.js";
+import { errorHandler } from "./middleware/errorHandler.js";
 
 export const app: Application = express();
 
